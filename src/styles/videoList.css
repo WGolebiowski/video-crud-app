@@ -1,0 +1,11 @@
+.video-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.video-list-element {
+    width: 30%;
+    margin-top: 10px;
+}
