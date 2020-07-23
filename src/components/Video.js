@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 class Video extends React.Component {
 
@@ -18,9 +19,9 @@ class Video extends React.Component {
         const { title, description, video_url } = this.state.movie
         return (
             <div>
+                <ReactPlayer url={video_url}/>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <p>{video_url}</p>
             </div>
     )}
 }

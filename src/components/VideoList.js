@@ -19,17 +19,21 @@ class VideoList extends React.Component {
 
   render() {
     return (
-      <div className="video-list">
-        {this.state.movies.map((movie, index) => (
-          <div className="video-list-element" key={`movie-${index}`}>
-            <h3>
-              <Link to={`/video/${movie.id}`}>{movie.title}</Link>
-            </h3>
-            <p>{movie.description}</p>
-            <p>{movie.video_url}</p>
-          </div>
-        ))}
-      </div>
+      <React.Fragment>
+        <h2>Video List</h2>
+        <div className="video-list">
+          {this.state.movies.map((movie, index) => (
+            <div className="video-list-element" key={`movie-${index}`}>
+              <div className="video-list-element_img">Image placeholder</div>
+              <h3>
+                <Link to={`/video/${movie.id}`}>{movie.title}</Link>
+              </h3>
+              <p>{movie.description}</p>
+              <button>Edit video details</button>
+            </div>
+          ))}
+        </div>
+      </React.Fragment>
     )
   }
 }
