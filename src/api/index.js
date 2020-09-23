@@ -5,7 +5,7 @@ function request(endpoint, method = "GET", data = null) {
     method,
     headers: {
       "Content-type": "application/json",
-      Authorization: "Bearer nvnvndf"
+      "Authorization": "Bearer nvnvndf"
     }
   };
   if (method === "POST" || method === "PATCH") {

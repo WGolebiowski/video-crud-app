@@ -31,6 +31,7 @@ class EditVideo extends React.Component {
                 {title: this.state.movie.title,
                  description: this.state.movie.description,
                  video_url: this.state.movie.video_url})
+        .catch(err => console.error(err))
     }
 
     render(){
