@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import api from '../api';
 
 import "../styles/videoList.css";
 
@@ -10,8 +11,8 @@ class VideoList extends React.Component {
   }
 
   componentDidMount(){
-    fetch("https://srapi.herokuapp.com/v1/movies")
-    .then( response => response.json())
+    api
+    .get("/movies")
     .then( data => this.setState({ movies: data }))
     .catch(err => console.error(err))
   }
@@ -29,7 +30,7 @@ class VideoList extends React.Component {
                 <Link to={`/video/${movie.id}`}>{movie.title}</Link>
               </h3>
               <p>{movie.description}</p>
-              <button>Edit video details</button>
+              <Link to={`/edit/${movie.id}`}><button>Edit video details</button></Link>
             </div>
           ))}
         </div>

@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 import Video from "./components/Video";
+import EditVideo from "./components/EditVideo";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/about"><About /></Route>
             <Route path="/addVideo"><AddVideo /></Route>
             <Route path="/video/:id" component={Video} />
+            <Route path="/edit/:id" component={EditVideo} />
           </Switch>
         </div>
       </Router>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import api from '../api';
 
 class Video extends React.Component {
 
@@ -8,8 +9,8 @@ class Video extends React.Component {
     }
 
     componentDidMount(){
-        fetch(`https://srapi.herokuapp.com/v1/movies/${this.props.match.params.id}`)
-        .then( response => response.json())
+        api
+        .get(`/movies/${this.props.match.params.id}`)
         .then( data => this.setState({ movie: data }))
         .catch( err => console.error(err))
     }
